@@ -20,6 +20,6 @@ public class Seller {
     @Column
     private String name;
 
-    @OneToMany(mappedBy = "seller", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "seller",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Product> productList;
 }

@@ -1,6 +1,5 @@
 package com.javasession.hibernate.service;
 
-import com.javasession.hibernate.entity.Orders;
 import com.javasession.hibernate.entity.Users;
 import com.javasession.hibernate.repository.UserRepository;
 import lombok.Data;
@@ -20,7 +19,6 @@ public class UserService {
     public void getAllUsers() {
         log.info(">>>>>>>>>> An example of Lazy Loading <<<<<<<<<<<<<<");
         List<Users> userList = userRepository.findAll();
-
         userList.stream().forEach(user -> {
             log.info("User : {}", user.getName());
             user.getOrdersList().stream().forEach(order -> {
