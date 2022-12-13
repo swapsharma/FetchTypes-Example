@@ -23,10 +23,10 @@ public class UserService {
 
         userList.stream().forEach(user -> {
             log.info("User : {}", user.getName());
-//            user.getOrdersList().stream().forEach(order -> {
-//                log.info("OrderId : {}", order.getOrderId());
-//                log.info("Order Name : {}", order.getName());
-//            });
+            user.getOrdersList().stream().forEach(order -> {
+                log.info("OrderId : {}", order.getOrderId());
+                log.info("Order Name : {}", order.getName());
+            });
         });
     }
 }
