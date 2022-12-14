@@ -22,5 +22,5 @@ public class Users {
     private String name;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Orders> ordersList;
+    private List<Orders> orders;
 }

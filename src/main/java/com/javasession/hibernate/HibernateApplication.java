@@ -41,8 +41,9 @@ public class HibernateApplication implements CommandLineRunner {
 	@Transactional
 	public void run(String... args) throws Exception {
 
-		userService.getAllUsers();
+		userService.getAllUsersUsingJoinFetch();
 		sellerService.getAllSellers();
+
 
 	}
 }

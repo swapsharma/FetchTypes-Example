@@ -16,12 +16,12 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public void getAllUsers() {
+    public void getAllUsersUsingJoinFetch() {
         log.info(">>>>>>>>>> An example of Lazy Loading <<<<<<<<<<<<<<");
-        List<Users> userList = userRepository.findAll();
+        List<Users> userList = userRepository.findWithoutNPlusOne();
         userList.stream().forEach(user -> {
             log.info("User : {}", user.getName());
-            user.getOrdersList().stream().forEach(order -> {
+            user.getOrders().stream().forEach(order -> {
                 log.info("OrderId : {}", order.getOrderId());
                 log.info("Order Name : {}", order.getName());
             });

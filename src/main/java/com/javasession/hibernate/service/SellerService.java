@@ -20,10 +20,10 @@ public class SellerService {
 
     public void getAllSellers() {
         log.info(">>>>>>>>>> An example of Easy Loading <<<<<<<<<<<<<<");
-        List<Seller> sellerList = sellerRepository.findAll();
+        List<Seller> sellerList = sellerRepository.findAllByUsingEntityGraph();
         sellerList.stream().forEach(seller -> {
             log.info("Seller : {}", seller.getName());
-            seller.getProductList().stream().forEach(product -> {
+            seller.getProducts().stream().forEach(product -> {
                 log.info("ProductId : {}", product.getProductId());
                 log.info("ProductId Name : {}", product.getName());
             });

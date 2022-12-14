@@ -21,5 +21,5 @@ public class Seller {
     private String name;
 
     @OneToMany(mappedBy = "seller",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Product> productList;
+    private List<Product> products;
 }
